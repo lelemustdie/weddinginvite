@@ -1,103 +1,101 @@
-import Image from "next/image";
+import ReusableSection from "@/components/ReusableSection";
+import HeroSection from "@/components/HeroSection";
+import Itinerary from "@/components/Itinerary";
+import { FaChurch } from "react-icons/fa"
+import { GiPartyPopper } from "react-icons/gi"
+import RowItems from "@/components/RowItems";
+import PhotoCarousel, {CarouselImage} from "@/components/Carousel";
+import RsvpForm from "@/components/RSVP";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    const demoImages: CarouselImage[] = [
+        { src: "/images/wedding/ceremony.jpg", alt: "Ceremonia al aire libre", caption: "Ceremonia" },
+        { src: "/images/wedding/couple.jpg", alt: "Pareja en el atardecer", caption: "Los novios ♥" },
+        { src: "/images/wedding/venue.jpg", alt: "Salón de recepción", caption: "Recepción" },
+        { src: "/images/wedding/drinks.jpg", alt: "Barra de tragos", caption: "Barra de tragos" },
+        { src: "/images/wedding/dance.jpg", alt: "Pista de baile", caption: "La fiesta" },
+    ]
+
+    const itineraryItems = [
+        {
+            icon: <FaChurch size={40} />,
+            title: "CEREMONIA",
+            time: "21:00 HS",
+            button: { label: "VER MAPA", href: "https://maps.google.com" },
+        },
+        {
+            icon: <GiPartyPopper size={40} />,
+            title: "CELEBRACIÓN",
+            time: "22:00 HS",
+            button: { label: "VER MAPA", href: "https://maps.google.com" },
+        },
+    ]
+
+    return (
+        <>
+            <HeroSection/>
+            <ReusableSection
+                divisors={true}
+                variant="green"
+                title="El día más esperado de nuestras vidas está llegando…"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+            <ReusableSection
+                variant="white"
+                title="CUANDO"
+                subtitle="20 DE DICIEMBRE DE 2025"
+
+            />
+            <ReusableSection
+                variant="white"
+                title="DONDE"
+                subtitle="EL DORADO EVENTOS"
+                button={{label: "COMO LLEGAR", href: "https://goo.gl/maps/xxxxx"}}
+                //agregar foto debajo del donde antes del itinerario
+            />
+            <div>
+                <Itinerary items={itineraryItems}/>
+            </div>
+            <ReusableSection
+                variant="white"
+                title="DRESSCODE"
+                subtitle="ELEGANTE"
+            />
+            <ReusableSection
+                variant="green"
+                title="LUNA DE MIEL"
+                subtitle="SI DESEAN HACERNOS UN OBSEQUIO, PUEDEN CONTRIBUIR A NUESTRA LUNA DE MIEL"
+                //AGREGAR BUTTON DE MODAL
+            />
+            <ReusableSection
+                variant="white"
+                title="QUEREMOS VER TUS FOTOS"
+                subtitle="PUEDEN USAR NUESTRO # EN TODAS SUS PUBLICACIONES DE INSTAGRAM #BODACELEYMATEO"
+            />
+            <section style={{maxWidth: 1100, margin: "0 auto"}}>
+                <PhotoCarousel
+                    images={demoImages}
+                    autoPlay
+                    interval={4500}
+                    showIndicators
+                    showArrows
+                    loop
+                    pauseOnHover
+                />
+            </section>
+            <ReusableSection
+                divisors={true}
+                variant="green"
+                title="FRASE PARA CORTAR"
+            />
+            <RowItems/>
+            <RsvpForm
+                title="CONFIRMÁ TU ASISTENCIA"
+                subtitle="Antes del 6 de noviembre"
+                spotifyPlaylistUrl="https://open.spotify.com/playlist/xxxxxxxx" // tu playlist pública
+                // onSubmit opcional: si no lo pasás, postea a /api/rsvp
+                // onSubmit={async (data) => { await fetch(...); }}
+            />
+        </>
+    );
 }

@@ -1,0 +1,23 @@
+.wedding-details {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.wedding-title {
+    font-size: 2rem;
+    color: #5a4a42;
+    margin-bottom: 0.5rem;
+}
+
+.wedding-subtitle {
+    font-size: 1.2rem;
+    color: #9a9a7d;
+    margin-bottom: 3rem;
+}
+
+.wedding-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* por si se achica la pantalla */
+}

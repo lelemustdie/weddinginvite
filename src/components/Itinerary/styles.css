@@ -1,0 +1,16 @@
+.itinerary-container {
+    background: white;
+    border: 1px solid #9a9a7d; /* verdecito */
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.itinerary-title {
+    font-family: 'Cursive', sans-serif; /* reemplazá por la fuente que uses */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #5a4a42; /* marroncito */
+}
