@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Parisienne } from "next/font/google";
+import { Montserrat, Parisienne, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -12,6 +12,13 @@ const parisienne = Parisienne({
   variable: "--font-parisienne",
   subsets: ["latin"],
   weight: "400", 
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${parisienne.variable} antialiased`}
+        className={`${montserrat.variable} ${parisienne.variable} ${cormorantGaramond.variable} antialiased`}
       >
         {children}
       </body>

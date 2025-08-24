@@ -51,30 +51,30 @@ const HeroSection = () => {
                     className="hero-img"
                 />
                 <div className="overlay" />
+
+                <div className="hero-content">
+                    <p className="hero-subtitle">LLEGÓ EL DÍA</p>
+                    <h1 className="hero-title">Cele y Mateo</h1>
+                    <p className="hero-text">¡NOS CASAMOS!</p>
+                </div>
             </div>
 
-            <div className="hero-content">
-                <p className="hero-subtitle">LLEGÓ EL DÍA</p>
-                <h1 className="hero-title">Cele y Mateo</h1>
-                <p className="hero-text">¡NOS CASAMOS!</p>
-
-                <div className="countdown">
-                    <div className="time-box">
-                        <span>{countdown.days}</span>
-                        <small>DÍAS</small>
-                    </div>
-                    <div className="time-box">
-                        <span>{countdown.hours}</span>
-                        <small>HORAS</small>
-                    </div>
-                    <div className="time-box">
-                        <span>{countdown.minutes}</span>
-                        <small>MINUTOS</small>
-                    </div>
-                    <div className="time-box">
-                        <span>{countdown.seconds}</span>
-                        <small>SEGUNDOS</small>
-                    </div>
+            <div className="countdown">
+                <div className="time-box">
+                    <span>{countdown.days}</span>
+                    <small>DÍAS</small>
+                </div>
+                <div className="time-box">
+                    <span>{countdown.hours}</span>
+                    <small>HORAS</small>
+                </div>
+                <div className="time-box">
+                    <span>{countdown.minutes}</span>
+                    <small>MINUTOS</small>
+                </div>
+                <div className="time-box">
+                    <span>{countdown.seconds}</span>
+                    <small>SEGUNDOS</small>
                 </div>
             </div>
         </section>
