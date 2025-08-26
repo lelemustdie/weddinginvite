@@ -18,6 +18,16 @@
 .wedding-items {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 2rem;
-    flex-wrap: wrap; /* por si se achica la pantalla */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ensure each item has consistent width for better alignment */
+.wedding-items>* {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
 }
