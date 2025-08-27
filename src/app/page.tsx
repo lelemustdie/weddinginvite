@@ -6,7 +6,14 @@ import { GiPartyPopper } from "react-icons/gi"
 import RowItems from "@/components/RowItems";
 import PhotoCarousel, {CarouselImage} from "@/components/Carousel";
 import RsvpForm from "@/components/RSVP";
-import calendarGif from "../../public/calendar.gif"
+import calendarGif from "../../public/valentines-day.gif"
+import partyGif from "../../public/disco-ball.gif"
+import dresscodeGif from "../../public/dress.gif"
+import locationGif from "../../public/google-maps.gif"
+import churchGif from "../../public/church.gif"
+import honeymoonGif from "../../public/personalized-honeymoons.gif"
+import SimpleYouTubeAudio from "@/components/SimpleYoutubeAudio";
+
 
 export default function Home() {
 
@@ -20,7 +27,7 @@ export default function Home() {
 
     const itineraryItems = [
         {
-            icon: <FaChurch size={40} />,
+            icon: {churchGif},
             title: "CEREMONIA",
             time: "21:00 HS",
             button: { label: "VER MAPA", href: "https://maps.google.com" },
@@ -33,8 +40,21 @@ export default function Home() {
         },
     ]
 
+    const youtubeConfig = {
+        videoId: "Q5z6RHIpi2Y", // Replace with your actual video ID
+        startTime: 0, // Start from beginning or specify seconds
+        autoplay: true, // Set to true if you want music to start automatically
+        showControls: true // Show the floating play/pause button
+    };
+
     return (
         <>
+            <SimpleYouTubeAudio
+                videoId={youtubeConfig.videoId}
+                startTime={youtubeConfig.startTime}
+                autoplay={youtubeConfig.autoplay}
+                showControls={youtubeConfig.showControls}
+            />
             <HeroSection/>
             <ReusableSection
                 divisors={true}
@@ -44,27 +64,30 @@ export default function Home() {
             <ReusableSection
                 variant="white"
                 icon={calendarGif}
-                title="CUANDO"
+                title="¿CUÁNDO?"
                 subtitle="20 DE DICIEMBRE DE 2025"
 
             />
             <ReusableSection
                 variant="white"
-                title="DONDE"
+                icon={locationGif}
+                title="¿DÓNDE?"
                 subtitle="EL DORADO EVENTOS"
-                button={{label: "COMO LLEGAR", href: "https://goo.gl/maps/xxxxx"}}
+                button={{label: "COMO LLEGAR", href: "https://maps.app.goo.gl/kTaqA5igPMeoXhdc6?g_st=awb"}}
                 //agregar foto debajo del donde antes del itinerario
             />
-            <div>
+            <div className="flex flex-col align-center">
                 <Itinerary items={itineraryItems}/>
             </div>
             <ReusableSection
                 variant="white"
-                title="DRESSCODE"
-                subtitle="ELEGANTE"
+                icon={dresscodeGif}
+                title="DRESSCODE: ELEGANTE"
+                subtitle="EL BLANCO ES UN COLOR HERMOSO, PERO EN NUESTRA BODA ES EXCLUSIVO PARA LA NOVIA"
             />
             <ReusableSection
                 variant="green"
+                icon={honeymoonGif}
                 title="LUNA DE MIEL"
                 subtitle="SI DESEAN HACERNOS UN OBSEQUIO, PUEDEN CONTRIBUIR A NUESTRA LUNA DE MIEL"
                 //AGREGAR BUTTON DE MODAL
@@ -93,7 +116,7 @@ export default function Home() {
             <RowItems/>
             <RsvpForm
                 title="CONFIRMÁ TU ASISTENCIA"
-                subtitle="Antes del 6 de noviembre"
+                subtitle="Antes del 20 de noviembre"
                 spotifyPlaylistUrl="https://open.spotify.com/playlist/xxxxxxxx"
                 googleScriptUrl="https://script.google.com/macros/s/AKfycbyes3bQhihd8kU-vvc2HLBUQ6qNT8pdbOxhrM7ASVUWciPu4hqSBpBTWWeIyaMB3eI/exec"
             />

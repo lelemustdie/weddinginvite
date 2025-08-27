@@ -8,13 +8,13 @@
 }
 
 .reusable-section.green {
-    background-color: #9a9a7d; /* tu verde */
+    background-color: #475675; /* tu verde */
     color: white;
 }
 
 .reusable-section.white {
     background-color: white;
-    color: #5a4a42; /* tu marrón */
+    color: #232F48; /* tu marrón */
 }
 
 .section-icon {
@@ -46,7 +46,7 @@
 }
 
 .section-divider.white {
-    background-color: #9a9a7d; /* verdecito */
+    background-color: #475675; /* verdecito */
 }
 
 .section-divider.green {

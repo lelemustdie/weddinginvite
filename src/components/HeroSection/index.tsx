@@ -19,7 +19,6 @@ const HeroSection = () => {
         seconds: 0,
     })
 
-    // 📅 Ajusta esta fecha al día de la boda
     const weddingDate = new Date("2025-12-20T00:00:00")
 
     useEffect(() => {

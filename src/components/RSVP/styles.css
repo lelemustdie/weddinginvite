@@ -1,6 +1,6 @@
 /* FONDO VERDE A TODO EL BLOQUE */
 .rsvp-bg {
-    background: #9a9a7d;            /* verde boda */
+    background: #475675;            /* verde boda */
     padding: 3rem 0;                /* aire arriba/abajo */
 }
 
@@ -81,10 +81,10 @@ input.rsvp-input:-webkit-autofill:focus {
 }
 
 /* ===== Botón ===== */
-.rsvp-actions { margin-top: 1.1rem; text-align: left; }
+.rsvp-actions { margin-top: 1.1rem; text-align: center; }
 .rsvp-submit {
     background: #fff;
-    color: #5a4a42;
+    color: #232F48;
     border: 2px solid #fff;
     padding: .6rem 1.15rem;
     border-radius: 6px;

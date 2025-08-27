@@ -2,7 +2,7 @@ import ReusableSection from "../ReusableSection"
 import "./styles.css"
 
 interface ItineraryItem {
-    icon: React.ReactNode
+    icon: any
     title: string
     subtitle?: string
     button?: {

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import ReusableSection from "@/components/ReusableSection";
-import { FaSpotify } from "react-icons/fa";
+import musicGif from "../../../public/music.gif"
 import "./styles.css";
 
 type Attendance = "asistire" | "no-asistire";
@@ -252,12 +252,12 @@ export default function RsvpForm({
                         <ReusableSection
                             divisorDown
                             variant="green"
-                            icon={<FaSpotify size={28} />}
+                            icon={musicGif}
                             title="Sumá tu canción a la playlist"
                             subtitle="Abrí la playlist pública y agregá tus temas favoritos para la fiesta."
                             button={{
                                 label: "Abrir playlist en Spotify",
-                                href: spotifyPlaylistUrl,
+                                href: "https://open.spotify.com/playlist/1bmVQdbMVSfm1V8JZf8v4u?si=cPWczp6bRYWGXIVlwASPFw&pi=PSsa8S8EQPGS-&pt=912fb05830f43768e1ca8180e296d2ff",
                             }}
                         />
                     </div>
