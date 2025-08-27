@@ -9,8 +9,8 @@
 }
 
 .itinerary-title {
-    font-family: 'Cursive', sans-serif; /* reemplazá por la fuente que uses */
-    font-size: 1.8rem;
+    font-family: "Parisienne", cursive !important;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     color: #5a4a42; /* marroncito */
 }

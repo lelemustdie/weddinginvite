@@ -6,6 +6,7 @@ import { GiPartyPopper } from "react-icons/gi"
 import RowItems from "@/components/RowItems";
 import PhotoCarousel, {CarouselImage} from "@/components/Carousel";
 import RsvpForm from "@/components/RSVP";
+import calendarGif from "../../public/calendar.gif"
 
 export default function Home() {
 
@@ -42,6 +43,7 @@ export default function Home() {
             />
             <ReusableSection
                 variant="white"
+                icon={calendarGif}
                 title="CUANDO"
                 subtitle="20 DE DICIEMBRE DE 2025"
 
@@ -92,9 +94,8 @@ export default function Home() {
             <RsvpForm
                 title="CONFIRMÁ TU ASISTENCIA"
                 subtitle="Antes del 6 de noviembre"
-                spotifyPlaylistUrl="https://open.spotify.com/playlist/xxxxxxxx" // tu playlist pública
-                // onSubmit opcional: si no lo pasás, postea a /api/rsvp
-                // onSubmit={async (data) => { await fetch(...); }}
+                spotifyPlaylistUrl="https://open.spotify.com/playlist/xxxxxxxx"
+                googleScriptUrl="https://script.google.com/macros/s/AKfycbyes3bQhihd8kU-vvc2HLBUQ6qNT8pdbOxhrM7ASVUWciPu4hqSBpBTWWeIyaMB3eI/exec"
             />
         </>
     );

@@ -29,6 +29,7 @@ interface RsvpFormProps {
     spotifyPlaylistUrl?: string;
     onSubmit?: (data: RsvpPayload) => Promise<void> | void;
     showPlaylistCard?: boolean;
+    googleScriptUrl?: string; // Add this prop for the Google Apps Script URL
 }
 
 const DIET_OPTIONS = [
@@ -48,6 +49,7 @@ export default function RsvpForm({
                                      spotifyPlaylistUrl,
                                      onSubmit,
                                      showPlaylistCard = true,
+                                     googleScriptUrl, // Your Google Apps Script URL
                                  }: RsvpFormProps) {
     const [attendance, setAttendance] = useState<Attendance>("asistire");
     const [firstName, setFirstName] = useState("");
@@ -67,14 +69,31 @@ export default function RsvpForm({
         return true;
     }, [firstName, lastName, needsDietOtherText, dietOtherText]);
 
+    const submitToGoogleSheets = async (payload: RsvpPayload) => {
+        if (!googleScriptUrl) {
+            throw new Error("Google Script URL not provided");
+        }
+
+        await fetch(googleScriptUrl, {
+            method: "POST",
+            mode: "no-cors", // Important for Google Apps Script
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+        });
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setOkMsg(null);
         setErrMsg(null);
+
         if (!isValid) {
             setErrMsg("Completá los campos obligatorios.");
             return;
         }
+
         const payload: RsvpPayload = {
             attendance,
             firstName: firstName.trim(),
@@ -85,16 +104,33 @@ export default function RsvpForm({
 
         try {
             setLoading(true);
-            if (onSubmit) await onSubmit(payload);
-            else {
+
+            if (onSubmit) {
+                // Use custom onSubmit if provided
+                await onSubmit(payload);
+            } else if (googleScriptUrl) {
+                // Submit to Google Sheets
+                await submitToGoogleSheets(payload);
+            } else {
+                // Fallback to your existing API
                 await fetch("/api/rsvp", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload),
                 });
             }
+
             setOkMsg("¡Tu respuesta fue registrada! Gracias ❤️");
-        } catch {
+
+            // Reset form after successful submission
+            setFirstName("");
+            setLastName("");
+            setAttendance("asistire");
+            setDiet("ninguno");
+            setDietOtherText("");
+
+        } catch (error) {
+            console.error("Submission error:", error);
             setErrMsg("Hubo un problema al enviar tu respuesta. Intentalo de nuevo.");
         } finally {
             setLoading(false);

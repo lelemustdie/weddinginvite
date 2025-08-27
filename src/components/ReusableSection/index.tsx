@@ -1,5 +1,6 @@
 // components/reusable-section/index.tsx
 import "./styles.css"
+import Image from "next/image";
 
 interface ButtonProps {
     label: string
@@ -12,7 +13,7 @@ interface ReusableSectionProps {
     /** Color scheme */
     variant?: "green" | "white"
     /** Icono opcional arriba del título */
-    icon?: React.ReactNode
+    icon?: any
     /** Título de la sección */
     title?: string
     /** Subtítulo / descripción corta */
@@ -43,7 +44,7 @@ const ReusableSection = ({
         <div className={`reusable-section ${variant}`}>
             {showUpper && <div className={`section-divider ${variant}`} />}
 
-            {icon && <div className="section-icon">{icon}</div>}
+            {icon && <Image className="section-icon" src={icon} alt="image" width={100} height={100}></Image>}
             {title && <h3 className="section-title">{title}</h3>}
             {subtitle && <p className="section-subtitle">{subtitle}</p>}
 
