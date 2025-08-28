@@ -20,7 +20,7 @@ interface SimpleYouTubeAudioProps {
 export default function SimpleYouTubeAudio({
                                                videoId,
                                                startTime = 0,
-                                               autoplay = false,
+                                               autoplay = true,
                                                className = "",
                                                showControls = true
                                            }: SimpleYouTubeAudioProps) {
@@ -136,7 +136,7 @@ export default function SimpleYouTubeAudio({
                 <button
                     onClick={togglePlayPause}
                     disabled={!isReady}
-                    className="fixed bottom-6 right-6 w-14 h-14 bg-black bg-opacity-70 text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all z-50 disabled:opacity-50"
+                    className="fixed bottom-6 right-6 w-14 h-14 bg-amber-50 bg-opacity-70 text-white rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all z-50 disabled:opacity-50"
                     style={{ display: 'flex' }}
                 >
                     <i className={`fas ${isPlaying ? 'fa-pause' : 'fa-play'} text-lg`}></i>
