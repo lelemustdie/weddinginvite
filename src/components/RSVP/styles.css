@@ -17,7 +17,6 @@
 .rsvp-title {
     margin: 0;
     font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-    font-weight: 800;
     letter-spacing: 0.03em;
 }
 .rsvp-subtitle {

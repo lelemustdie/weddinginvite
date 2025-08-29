@@ -19,7 +19,7 @@ const HeroSection = () => {
         seconds: 0,
     })
 
-    const weddingDate = new Date("2025-12-20T00:00:00")
+    const weddingDate = new Date("2025-12-20T00:19:30")
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -43,7 +43,7 @@ const HeroSection = () => {
         <section className="hero-section">
             <div className="hero-image">
                 <Image
-                    src="/heropic.jpeg"
+                    src="/portada.webp"
                     alt="Boda"
                     fill
                     priority

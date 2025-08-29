@@ -135,7 +135,7 @@
 /* 💻 Desktop */
 @media (min-width: 1024px) {
     .hero-image {
-        height: 60vh;
+        height: 90vh;
     }
 
     .hero-content {

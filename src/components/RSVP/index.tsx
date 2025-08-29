@@ -250,13 +250,12 @@ export default function RsvpForm({
                 {showPlaylistCard && spotifyPlaylistUrl && (
                     <div className="rsvp-playlist">
                         <ReusableSection
-                            divisorDown
                             variant="green"
                             icon={musicGif}
-                            title="Sumá tu canción a la playlist"
-                            subtitle="Abrí la playlist pública y agregá tus temas favoritos para la fiesta."
+                            title="SUMÁ TU MÚSICA"
+                            subtitle="HAGAMOS UNA PLAYLIST JUNTOS"
                             button={{
-                                label: "Abrir playlist en Spotify",
+                                label: "ABRIR SPOTIFY",
                                 href: "https://open.spotify.com/playlist/1bmVQdbMVSfm1V8JZf8v4u?si=cPWczp6bRYWGXIVlwASPFw&pi=PSsa8S8EQPGS-&pt=912fb05830f43768e1ca8180e296d2ff",
                             }}
                         />

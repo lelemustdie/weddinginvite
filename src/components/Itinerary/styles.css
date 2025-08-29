@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: white;
     border: 1px solid #304675; /* verdecito */
     border-radius: 8px;
@@ -12,7 +13,7 @@
 }
 
 .itinerary-title {
-    font-family: "Parisienne", cursive !important;
+    font-family: "Corsiva Hebrew", cursive !important;
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
     color: #232F48; /* marroncito */
@@ -21,6 +22,10 @@
 /* Mobile override */
 @media (max-width: 768px) {
     .itinerary-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 30px;
     }
 }

@@ -4,7 +4,8 @@ import Image from "next/image";
 
 interface ButtonProps {
     label: string
-    href: string
+    href?: string       // opcional
+    onClick?: () => void // nuevo para modal
 }
 
 interface ReusableSectionProps {
@@ -18,7 +19,9 @@ interface ReusableSectionProps {
     title?: string
     /** Subtítulo / descripción corta */
     subtitle?: string
-    /** Botón opcional con label y href */
+    subsubtitle?: string
+    subsubsubtitle?: string
+    /** Botón opcional con label y href o onClick */
     button?: ButtonProps
     /** Muestra un divisor arriba del contenido */
     divisorUpper?: boolean
@@ -33,6 +36,8 @@ const ReusableSection = ({
                              icon,
                              title,
                              subtitle,
+                             subsubtitle,
+                             subsubsubtitle,
                              button,
                              divisorUpper,
                              divisorDown,
@@ -44,19 +49,40 @@ const ReusableSection = ({
         <div className={`reusable-section ${variant}`}>
             {showUpper && <div className={`section-divider ${variant}`} />}
 
-            {icon && <Image className="section-icon" src={icon} alt="image" width={100} height={100}></Image>}
+            {icon && (
+                <Image
+                    src={icon}
+                    className="section-icon"
+                    alt="image"
+                    width={100}
+                    height={100}
+                />
+            )}
             {title && <h3 className="section-title">{title}</h3>}
             {subtitle && <p className="section-subtitle">{subtitle}</p>}
+            {subsubsubtitle && <p className="section-subtitle">{subsubsubtitle}</p>}
+            {subsubtitle && <p className="section-subsubtitle">{subsubtitle}</p>}
 
             {button && (
-                <a
-                    href={button.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="section-button"
-                >
-                    {button.label}
-                </a>
+                <>
+                    {button.href ? (
+                        <a
+                            href={button.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="section-button"
+                        >
+                            {button.label}
+                        </a>
+                    ) : (
+                        <button
+                            onClick={button.onClick}
+                            className="section-button"
+                        >
+                            {button.label}
+                        </button>
+                    )}
+                </>
             )}
 
             {showDown && <div className={`section-divider ${variant}`} />}
