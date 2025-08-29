@@ -1,7 +1,7 @@
 // components/reusable-section/index.tsx
 import "./styles.css"
 import Image, {StaticImageData} from "next/image";
-import {IconType} from "react-icons";
+import { motion } from "framer-motion";
 
 interface ButtonProps {
     label: string
@@ -42,17 +42,24 @@ const ReusableSection = ({
     const showDown = divisors || !!divisorDown
 
     return (
-        <div className={`reusable-section ${variant}`}>
-            {showUpper && <div className={`section-divider ${variant}`} />}
+        <motion.div
+            initial={{opacity: 0, y: 50}} // estado inicial oculto
+            whileInView={{opacity: 1, y: 0}} // cuando aparece en pantalla
+            viewport={{once: true, amount: 0.3}}
+            transition={{duration: 0.8, ease: "easeOut"}}
+            className="my-8"
+        >
+    <div className={`reusable-section ${variant}`}>
+        {showUpper && <div className={`section-divider ${variant}`}/>}
 
-            {icon && (
-                <Image
-                    src={icon}
-                    className="section-icon"
-                    alt="image"
-                    width={100}
-                    height={100}
-                />
+        {icon && (
+            <Image
+                src={icon}
+                className="section-icon"
+                alt="image"
+                width={100}
+                height={100}
+            />
             )}
             {reactIcon && (
                 <>
@@ -88,6 +95,7 @@ const ReusableSection = ({
 
             {showDown && <div className={`section-divider ${variant}`} />}
         </div>
+        </motion.div>
     )
 }
 
