@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import ReusableSection from "@/components/ReusableSection";
-import musicGif from "../../../public/music.gif"
 import "./styles.css";
 
 type Attendance = "asistire" | "no-asistire";
@@ -251,7 +250,7 @@ export default function RsvpForm({
                     <div className="rsvp-playlist">
                         <ReusableSection
                             variant="green"
-                            icon={musicGif}
+                            icon="/spotify.gif"
                             title="SUMÁ TU MÚSICA"
                             subtitle="HAGAMOS UNA PLAYLIST JUNTOS"
                             button={{

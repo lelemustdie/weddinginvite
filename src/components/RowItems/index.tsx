@@ -11,19 +11,19 @@ const RowItems = () => {
 
             <div className="wedding-items">
                 <ReusableSection
-                    icon={<FaCar />}
+                    reactIcon={<FaCar className="size-[1.5rem] m-3" />}
                     title="ESTACIONAMIENTO"
                     subtitle="Para autos hasta el día siguiente a la boda inclusive"
                     divisorDown
                 />
                 <ReusableSection
-                    icon={<FaCamera />}
+                    reactIcon={<FaCamera className="size-[1.5rem] m-3" />}
                     title="FOTÓGRAFOS"
                     subtitle="Los queremos lindos/as porque nuestros fotógrafos los van a hacer posar"
                     divisorDown
                 />
                 <ReusableSection
-                    icon={<FaCocktail />}
+                    reactIcon={<FaCocktail className="size-[1.5rem] m-3" />}
                     title="TRAGOS"
                     subtitle="Tenemos una barra que es una locura"
                     divisorDown

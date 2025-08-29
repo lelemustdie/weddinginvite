@@ -10,9 +10,8 @@ import calendarGif from "../../public/valentines-day.gif"
 import partyGif from "../../public/disco-ball.gif"
 import dresscodeGif from "../../public/dress.gif"
 import locationGif from "../../public/google-maps.gif"
-import churchGif from "../../public/church.gif"
 import honeymoonGif from "../../public/personalized-honeymoons.gif"
-import heroImage from "../../public/Si.webp"
+import ceremonyGif from "../../public/marriage.gif"
 import cameraGif from  "../../public/camera.gif"
 import SimpleYouTubeAudio from "@/components/SimpleYoutubeAudio";
 import endPhoto from "../../public/final.webp"
@@ -26,25 +25,23 @@ export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const demoImages: CarouselImage[] = [
-        { src: "/images/wedding/ceremony.jpg", alt: "Ceremonia al aire libre" },
-        { src: "/images/wedding/couple.jpg", alt: "Pareja en el atardecer" },
-        { src: "/images/wedding/venue.jpg", alt: "Salón de recepción" },
-        { src: "/images/wedding/drinks.jpg", alt: "Barra de tragos" },
-        { src: "/images/wedding/dance.jpg", alt: "Pista de baile" },
+        { src: "/Si.webp", alt: "novios" },
+        { src: "/collage1.webp", alt: "novios" },
+        { src: "/Foto-Final.webp", alt: "novios" },
+        { src: "/car3.webp", alt: "novios" },
+        { src: "/collage2.webp", alt: "novios" },
     ]
 
     const itineraryItems = [
         {
-            icon: {churchGif},
+            icon: ceremonyGif,
             title: "CEREMONIA",
             time: "21:00 HS",
-            button: { label: "VER MAPA", href: "https://maps.google.com" },
         },
         {
-            icon: {partyGif},
+            icon: partyGif,
             title: "CELEBRACIÓN",
             time: "22:00 HS",
-            button: { label: "VER MAPA", href: "https://maps.google.com" },
         },
     ]
 
@@ -103,7 +100,7 @@ export default function Home() {
                     variant="green"
                     button={{
                         label: "VER DETALLE",
-                        onClick: () => setIsModalOpen(true), // 👉 abre modal
+                        onClick: () => setIsModalOpen(true),
                     }}
                 />
 
@@ -125,7 +122,7 @@ export default function Home() {
                 title="QUEREMOS VER TUS FOTOS"
                 subtitle="PUEDEN USAR NUESTRO #BODACELEYMATEO EN TODAS SUS PUBLICACIONES DE INSTAGRAM"
             />
-            <section style={{maxWidth: 1100, margin: "0 auto"}}>
+            <section style={{maxWidth: 1100, margin: "20px auto"}}>
                 <PhotoCarousel
                     images={demoImages}
                     autoPlay

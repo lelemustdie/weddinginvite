@@ -4,7 +4,6 @@
     /* Relación de aspecto 16:9; ajustá a gusto */
     aspect-ratio: 16 / 9;
     background: #f5f5f5;
-    border-radius: 12px;
     overflow: hidden;
 }
 

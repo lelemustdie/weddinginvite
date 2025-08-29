@@ -1,6 +1,7 @@
 // components/reusable-section/index.tsx
 import "./styles.css"
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
+import {IconType} from "react-icons";
 
 interface ButtonProps {
     label: string
@@ -9,23 +10,17 @@ interface ButtonProps {
 }
 
 interface ReusableSectionProps {
-    /** @deprecated Usa divisorUpper/divisorDown. Si se pasa, activa ambos divisores. */
+
     divisors?: boolean
-    /** Color scheme */
     variant?: "green" | "white"
-    /** Icono opcional arriba del título */
-    icon?: any
-    /** Título de la sección */
+    reactIcon?: React.ReactNode
+    icon?: StaticImageData | string
     title?: string
-    /** Subtítulo / descripción corta */
     subtitle?: string
     subsubtitle?: string
     subsubsubtitle?: string
-    /** Botón opcional con label y href o onClick */
     button?: ButtonProps
-    /** Muestra un divisor arriba del contenido */
     divisorUpper?: boolean
-    /** Muestra un divisor abajo del contenido */
     divisorDown?: boolean
 }
 
@@ -33,6 +28,7 @@ const ReusableSection = ({
                              // retrocompat: si vienen divisors=true, activamos ambos
                              divisors = false,
                              variant = "white",
+                             reactIcon,
                              icon,
                              title,
                              subtitle,
@@ -57,6 +53,11 @@ const ReusableSection = ({
                     width={100}
                     height={100}
                 />
+            )}
+            {reactIcon && (
+                <>
+                    {reactIcon}
+                </>
             )}
             {title && <h3 className="section-title">{title}</h3>}
             {subtitle && <p className="section-subtitle">{subtitle}</p>}
