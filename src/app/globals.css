@@ -6,7 +6,9 @@
   --greenwedding: #304675;
   --font-montserrat: var(--font-montserrat);
   --font-parisienne: var(--font-parisienne);
+  color-scheme: light;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
