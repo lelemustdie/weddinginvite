@@ -14,6 +14,7 @@ import honeymoonGif from "../../../../public/personalized-honeymoons.gif"
 import ceremonyGif from "../../../../public/marriage.gif"
 import cameraGif from "../../../../public/camera.gif"
 import endPhoto from "../../../../public/final.webp"
+import toastGif from "../../../../public/toast.gif"
 import Modal from "@/components/Modal";
 import {useState} from "react";
 import Image from "next/image";
@@ -38,7 +39,7 @@ export default function Home() {
             time: "20:00 HS",
         },
         {
-            icon: ceremonyGif,
+            icon: toastGif,
             title: "RECEPCIÓN",
             time: "21:00 HS",
         },

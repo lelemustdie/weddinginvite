@@ -2,24 +2,38 @@
 
 import { useRouter } from "next/navigation";
 
+declare global {
+    interface Window {
+        musicPlayer?: {
+            play: () => void;
+            pause: () => void;
+            stop: () => void;
+            isPlaying: boolean;
+        };
+    }
+}
+
 export default function LandingInvitacion() {
     const router = useRouter();
 
     const handleEnter = () => {
-        (window as any).musicPlayer?.play?.();
-        // Navega a la invitación real
+        window.musicPlayer?.play?.();
         router.push("/invitaciones-digitales/CYM");
     };
 
     return (
         <main className="min-h-screen flex flex-col items-center justify-center text-center p-6">
-            <h1 className="text-4xl md:text-6xl tracking-wide"
-                style={{ color: "var(--greenwedding, #9e9d83)", fontWeight: 500 }}>
+            <h1
+                className="text-4xl md:text-6xl tracking-wide"
+                style={{ color: "var(--greenwedding, #9e9d83)", fontWeight: 500 }}
+            >
                 CELE Y MATEO
             </h1>
 
-            <p className="mt-6 max-w-xl text-sm md:text-base tracking-widest"
-               style={{ color: "rgba(0,0,0,0.55)" }}>
+            <p
+                className="mt-6 max-w-xl text-sm md:text-base tracking-widest"
+                style={{ color: "rgba(0,0,0,0.55)" }}
+            >
                 EL CAMINO ES MÁS DIVERTIDO SI LO RECORREMOS JUNTOS
             </p>
 
