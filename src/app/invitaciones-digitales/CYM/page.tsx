@@ -6,15 +6,15 @@ import Itinerary from "@/components/Itinerary";
 import RowItems from "@/components/RowItems";
 import PhotoCarousel, {CarouselImage} from "@/components/Carousel";
 import RsvpForm from "@/components/RSVP";
-import calendarGif from "../../public/valentines-day.gif"
-import partyGif from "../../public/disco-ball.gif"
-import dresscodeGif from "../../public/dress.gif"
-import locationGif from "../../public/google-maps.gif"
-import honeymoonGif from "../../public/personalized-honeymoons.gif"
-import ceremonyGif from "../../public/marriage.gif"
-import cameraGif from  "../../public/camera.gif"
+import calendarGif from "../../../../public/valentines-day.gif"
+import partyGif from "../../../../public/disco-ball.gif"
+import dresscodeGif from "../../../../public/dress.gif"
+import locationGif from "../../../../public/google-maps.gif"
+import honeymoonGif from "../../../../public/personalized-honeymoons.gif"
+import ceremonyGif from "../../../../public/marriage.gif"
+import cameraGif from "../../../../public/camera.gif"
 import SimpleYouTubeAudio from "@/components/SimpleYoutubeAudio";
-import endPhoto from "../../public/final.webp"
+import endPhoto from "../../../../public/final.webp"
 import Modal from "@/components/Modal";
 import {useState} from "react";
 import Image from "next/image";
