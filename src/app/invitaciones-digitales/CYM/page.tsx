@@ -13,7 +13,6 @@ import locationGif from "../../../../public/google-maps.gif"
 import honeymoonGif from "../../../../public/personalized-honeymoons.gif"
 import ceremonyGif from "../../../../public/marriage.gif"
 import cameraGif from "../../../../public/camera.gif"
-import SimpleYouTubeAudio from "@/components/SimpleYoutubeAudio";
 import endPhoto from "../../../../public/final.webp"
 import Modal from "@/components/Modal";
 import {useState} from "react";
@@ -36,6 +35,11 @@ export default function Home() {
         {
             icon: ceremonyGif,
             title: "CEREMONIA",
+            time: "20:00 HS",
+        },
+        {
+            icon: ceremonyGif,
+            title: "RECEPCIÓN",
             time: "21:00 HS",
         },
         {
@@ -45,21 +49,9 @@ export default function Home() {
         },
     ]
 
-    const youtubeConfig = {
-        videoId: "Q5z6RHIpi2Y", // Replace with your actual video ID
-        startTime: 0, // Start from beginning or specify seconds
-        autoplay: true, // Set to true if you want music to start automatically
-        showControls: true // Show the floating play/pause button
-    };
 
     return (
         <>
-            <SimpleYouTubeAudio
-                videoId={youtubeConfig.videoId}
-                startTime={youtubeConfig.startTime}
-                autoplay={youtubeConfig.autoplay}
-                showControls={youtubeConfig.showControls}
-            />
             <HeroSection/>
             <ReusableSection
                 divisors={true}
