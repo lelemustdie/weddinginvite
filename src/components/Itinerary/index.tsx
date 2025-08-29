@@ -1,8 +1,9 @@
 import ReusableSection from "../ReusableSection"
 import "./styles.css"
+import {StaticImageData} from "next/image";
 
 interface ItineraryItem {
-    icon: any
+    icon: StaticImageData | string
     title: string
     subtitle?: string
     button?: {

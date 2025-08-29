@@ -1,15 +1,17 @@
 // components/HeroSection.tsx
-"use client"
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import "./styles.css"
+"use client";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import "./styles.css";
 
 interface Countdown {
-    days: number
-    hours: number
-    minutes: number
-    seconds: number
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
 }
+
+const WEDDING_DATE = new Date("2025-12-20T00:19:30");
 
 const HeroSection = () => {
     const [countdown, setCountdown] = useState<Countdown>({
@@ -17,40 +19,31 @@ const HeroSection = () => {
         hours: 0,
         minutes: 0,
         seconds: 0,
-    })
-
-    const weddingDate = new Date("2025-12-20T00:19:30")
+    });
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            const now = new Date().getTime()
-            const distance = weddingDate.getTime() - now
+        const id = setInterval(() => {
+            const now = Date.now();
+            const distance = WEDDING_DATE.getTime() - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor(
                 (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            )
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+            );
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            setCountdown({ days, hours, minutes, seconds })
-        }, 1000)
+            setCountdown({ days, hours, minutes, seconds });
+        }, 1000);
 
-        return () => clearInterval(interval)
-    }, [])
+        return () => clearInterval(id);
+    }, []);
 
     return (
         <section className="hero-section">
             <div className="hero-image">
-                <Image
-                    src="/portada.webp"
-                    alt="Boda"
-                    fill
-                    priority
-                    className="hero-img"
-                />
+                <Image src="/portada.webp" alt="Boda" fill priority className="hero-img" />
                 <div className="overlay" />
-
                 <div className="hero-content">
                     <p className="hero-subtitle">LLEGÓ EL DÍA</p>
                     <h1 className="hero-title">Cele y Mateo</h1>
@@ -77,7 +70,7 @@ const HeroSection = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default HeroSection
+export default HeroSection;
