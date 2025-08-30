@@ -47,7 +47,7 @@ const ReusableSection = ({
             whileInView={{opacity: 1, y: 0}} // cuando aparece en pantalla
             viewport={{once: true, amount: 0.3}}
             transition={{duration: 0.8, ease: "easeOut"}}
-            className="my-8"
+            className="mb-8 motion-container"
         >
     <div className={`reusable-section ${variant}`}>
         {showUpper && <div className={`section-divider ${variant}`}/>}

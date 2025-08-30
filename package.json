@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@number-flow/react": "^0.5.10",
     "motion": "^12.23.12",
     "next": "15.4.7",
     "react": "19.1.0",

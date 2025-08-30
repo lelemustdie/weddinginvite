@@ -60,47 +60,6 @@
     margin-bottom: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
-.countdown {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 2rem;
-    margin-top: -5rem;
-    z-index: 10;
-    background: transparent;
-}
-
-.time-box {
-    background: #475675;
-    color: white;
-    padding: 1.5rem 1rem;
-    border-radius: 0.5rem;
-    width: 90px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.time-box span {
-    font-size: 2rem;
-    font-weight: bold;
-    display: block;
-    color: white;
-}
-
-.time-box small {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: 1px;
-}
-
 /* 📱 Mobile */
 @media (max-width: 768px) {
     .hero-image {
@@ -116,7 +75,7 @@
         font-size: 2rem;
     }
 
-    .countdown {
+    /* .countdown {
         gap: 0.5rem;
         padding: 1.5rem;
         margin-top: -4rem;
@@ -129,7 +88,7 @@
 
     .time-box span {
         font-size: 1.6rem;
-    }
+    } */
 }
 
 /* 💻 Desktop */
@@ -147,7 +106,7 @@
         font-size: 3.5rem;
     }
 
-    .countdown {
+    /* .countdown {
         padding: 3rem;
         margin-top: -6rem;
         gap: 1.5rem;
@@ -160,5 +119,5 @@
 
     .time-box span {
         font-size: 2.5rem;
-    }
+    } */
 }
