@@ -28,7 +28,7 @@ const Itinerary = ({ items }: ItineraryProps) => {
                     title={item.title}
                     subtitle={item.time}
                     button={item.button}
-                    divisors={true}
+                    divisors={index !== 0 && index !== items.length - 1}
                     variant="white"
                 />
             ))}

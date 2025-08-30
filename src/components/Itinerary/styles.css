@@ -1,31 +1,39 @@
 .itinerary-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border: 1px solid #304675; /* verdecito */
-    border-radius: 8px;
-    padding: 5rem;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 1px solid #304675; /* verdecito */
+  border-radius: 8px;
+  padding: 5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+
+  .motion-container {
+    margin: 0;
+  }
+
+  .reusable-section {
+    padding: 0;
+  }
 }
 
 .itinerary-title {
-    font-family: "Corsiva Hebrew", cursive !important;
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    color: #232F48; /* marroncito */
+  font-family: "Corsiva Hebrew", cursive !important;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: #232f48; /* marroncito */
 }
 
 /* Mobile override */
 @media (max-width: 768px) {
-    .itinerary-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 30px;
-    }
+  .itinerary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+  }
 }
