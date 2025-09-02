@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, CSSProperties } from "react";
 import "./styles.css";
 import ChevronLeft from "@/icons/ChevronLeft";
 import ChevronRight from "@/icons/ChevronRight";
@@ -22,7 +22,14 @@ interface PhotoCarouselProps {
   className?: string;
   /** Ajustá alto relativo: "4 / 3", "1 / 1", "16 / 10", etc. */
   aspectRatio?: `${number} / ${number}`;
+  /** Podés forzar altura fija, ej: "60vh" o "500px" */
+  height?: string;
 }
+
+type CSSVarStyle = CSSProperties & {
+  ["--ratio"]?: string;
+  ["--height"]?: string;
+};
 
 const clampIndex = (i: number, len: number) =>
     Math.max(0, Math.min(i, len - 1));
@@ -36,7 +43,8 @@ const PhotoCarousel = ({
                          loop = true,
                          pauseOnHover = true,
                          className = "",
-                         aspectRatio = "16 / 9", // por defecto
+                         aspectRatio = "16 / 9",
+                         height,
                        }: PhotoCarouselProps) => {
   const len = images?.length ?? 0;
   const [index, setIndex] = useState(0);
@@ -54,6 +62,7 @@ const PhotoCarousel = ({
   const next = () => goTo(index + 1);
   const prev = () => goTo(index - 1);
 
+  // autoplay
   useEffect(() => {
     if (!autoPlay || !canSlide) return;
     if (pauseOnHover && isPaused) return;
@@ -62,6 +71,7 @@ const PhotoCarousel = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlay, canSlide, isPaused, index, interval]);
 
+  // teclado
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") next();
@@ -91,10 +101,15 @@ const PhotoCarousel = ({
 
   if (!len) return null;
 
+  const style: CSSVarStyle = {
+    "--ratio": aspectRatio,
+    ...(height ? { "--height": height } : {}),
+  };
+
   return (
       <div
           className={`photo-carousel ${className}`}
-          style={{ ["--ratio" as any]: aspectRatio }}
+          style={style}
           onMouseEnter={() => pauseOnHover && setIsPaused(true)}
           onMouseLeave={() => pauseOnHover && setIsPaused(false)}
           aria-roledescription="carousel"
