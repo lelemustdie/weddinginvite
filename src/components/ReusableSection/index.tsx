@@ -17,6 +17,7 @@ interface ReusableSectionProps {
     icon?: StaticImageData | string
     title?: string
     subtitle?: string
+    subtitleClassName?: string
     subsubtitle?: string
     subsubsubtitle?: string
     button?: ButtonProps
@@ -32,6 +33,7 @@ const ReusableSection = ({
                              icon,
                              title,
                              subtitle,
+                             subtitleClassName,
                              subsubtitle,
                              subsubsubtitle,
                              button,
@@ -67,7 +69,11 @@ const ReusableSection = ({
                 </>
             )}
             {title && <h3 className="section-title">{title}</h3>}
-            {subtitle && <p className="section-subtitle">{subtitle}</p>}
+            {subtitle && (
+            <p className={`section-subtitle ${subtitleClassName ?? ""}`}>
+                {subtitle}
+            </p>
+        )}
             {subsubsubtitle && <p className="section-subtitle">{subsubsubtitle}</p>}
             {subsubtitle && <p className="section-subsubtitle">{subsubtitle}</p>}
 

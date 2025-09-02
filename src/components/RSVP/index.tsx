@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import ReusableSection from "@/components/ReusableSection";
 import "./styles.css";
 
 type Attendance = "asistire" | "no-asistire";
@@ -25,9 +24,7 @@ export type RsvpPayload = {
 interface RsvpFormProps {
     title?: string;
     subtitle?: string;
-    spotifyPlaylistUrl?: string;
     onSubmit?: (data: RsvpPayload) => Promise<void> | void;
-    showPlaylistCard?: boolean;
     googleScriptUrl?: string; // Add this prop for the Google Apps Script URL
 }
 
@@ -45,9 +42,7 @@ const DIET_OPTIONS = [
 export default function RsvpForm({
                                      title = "CONFIRMÁ TU ASISTENCIA",
                                      subtitle = "Antes del 6 de noviembre",
-                                     spotifyPlaylistUrl,
                                      onSubmit,
-                                     showPlaylistCard = true,
                                      googleScriptUrl, // Your Google Apps Script URL
                                  }: RsvpFormProps) {
     const [attendance, setAttendance] = useState<Attendance>("asistire");
@@ -245,21 +240,6 @@ export default function RsvpForm({
                     {okMsg && <p className="rsvp-ok">{okMsg}</p>}
                     {errMsg && <p className="rsvp-error">{errMsg}</p>}
                 </form>
-
-                {showPlaylistCard && spotifyPlaylistUrl && (
-                    <div className="rsvp-playlist">
-                        <ReusableSection
-                            variant="green"
-                            icon="/spotify.gif"
-                            title="SUMÁ TU MÚSICA"
-                            subtitle="HAGAMOS UNA PLAYLIST JUNTOS"
-                            button={{
-                                label: "ABRIR SPOTIFY",
-                                href: "https://open.spotify.com/playlist/1bmVQdbMVSfm1V8JZf8v4u?si=cPWczp6bRYWGXIVlwASPFw&pi=PSsa8S8EQPGS-&pt=912fb05830f43768e1ca8180e296d2ff",
-                            }}
-                        />
-                    </div>
-                )}
             </section>
         </div>
     );

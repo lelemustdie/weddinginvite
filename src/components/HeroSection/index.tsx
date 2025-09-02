@@ -16,7 +16,7 @@ const HeroSection = () => {
         />
         <div className="overlay" />
         <div className="hero-content">
-          <p className="hero-subtitle">LLEGÓ EL DÍA</p>
+          <p className="hero-text">LLEGÓ EL DÍA</p>
           <h1 className="hero-title">Cele y Mateo</h1>
           <p className="hero-text">¡NOS CASAMOS!</p>
         </div>
