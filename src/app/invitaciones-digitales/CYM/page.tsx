@@ -88,7 +88,7 @@ export default function Home() {
             subtitleClassName="highlighted-text"
             subtitle="FORMAL ELEGANTE"
         />
-        <div className="flex flex-col align-middle justify-center items-center">
+        <div className="flex flex-col align-middle justify-center items-center md:mb-5">
           <Itinerary items={itineraryItems}/>
         </div>
 
