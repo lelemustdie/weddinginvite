@@ -1,14 +1,39 @@
-// app/layout.tsx
 import type { Metadata } from "next";
+import { Montserrat, Parisienne, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap", 
+});
+
+const parisienne = Parisienne({
+  variable: "--font-parisienne",
+  subsets: ["latin"],
+  weight: "400", 
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lourdespontiroli.com"),
-  title: {
-    default: "Cele y Mateo — ¡Nos casamos!",
-    template: "%s | Lourdes Pontiroli",
+  title: "CELE Y MATEO",
+  description: "¡NOS CASAMOS!",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
-  description: "Invitación digital con fecha, lugar, RSVP y más.",
+  metadataBase: new URL("https://lourdespontiroli.com"),
   openGraph: {
     title: "Cele y Mateo — ¡Nos casamos!",
     description: "Fecha, lugar, RSVP y más.",
@@ -31,24 +56,20 @@ export const metadata: Metadata = {
     description: "Fecha, lugar, RSVP y más.",
     images: ["/og/cover.jpg"],
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: {
+  children,
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-      <html lang="es">
-      <body>{children}</body>
-      </html>
+    <html lang="en">
+      <body
+        className={`${montserrat.variable} ${parisienne.variable} ${cormorantGaramond.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
   );
 }
