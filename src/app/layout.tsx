@@ -23,8 +23,8 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "INVITACIONES DIGITALES",
-  description: "por Lourdes Pontiroli",
+  title: "CELE Y MATEO",
+  description: "¡NOS CASAMOS!",
 };
 
 export default function RootLayout({
