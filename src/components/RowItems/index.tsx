@@ -11,7 +11,7 @@ const RowItems = () => {
                 <ReusableSection
                     reactIcon={<FaCar className="size-[1.5rem] m-3" />}
                     title="ESTACIONAMIENTO"
-                    subtitle="CONTAMOS CON ESTACIONAMIENTO PRIVADO CON VIGILANCIA DENTRO DEL PREDIO"
+                    subtitle="CONTAMOS CON VIGILANCIA PRIVADA DENTRO DEL PREDIO"
                     subtitleClassName={"row-items-font"}
                     divisorDown
                 />
