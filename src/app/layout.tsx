@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "lourdespontiroli.com",
     images: [
       {
-        url: "/og/cover.jpg", // coloca aquí un JPG/PNG 1200x630 público
+        url: "/og/cover-v3.jpg", // coloca aquí un JPG/PNG 1200x630 público
         width: 1200,
         height: 630,
         alt: "Anillo",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CELE Y MATEO",
     description: "¡NOS CASAMOS!",
-    images: ["/og/cover.jpg"],
+    images: ["/og/cover-v3.jpg"],
   },
 };
 
