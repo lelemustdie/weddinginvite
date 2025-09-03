@@ -18,7 +18,7 @@ export default function LandingInvitacion() {
 
     const handleEnter = () => {
         window.musicPlayer?.play?.();
-        router.push("/invitaciones-digitales/CYM");
+        router.push("/invitacion-digital-cym/CYM");
     };
 
     return (

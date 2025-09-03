@@ -8,7 +8,7 @@ import Head from "next/head";
 export default function InvitacionesLayout({ children }: { children: ReactNode }) {
     const pathname = usePathname();
 
-    const isInInvitation = pathname?.startsWith("/invitaciones-digitales/CYM");
+    const isInInvitation = pathname?.startsWith("/invitacion-digital-cym/CYM");
 
     return (
         <>
@@ -23,7 +23,7 @@ export default function InvitacionesLayout({ children }: { children: ReactNode }
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="800" />
                 <meta property="og:image:alt" content="Cele y Mateo - Invitación de Boda" />
-                <meta property="og:url" content="https://lourdespontiroli.com/invitaciones-digitales" />
+                <meta property="og:url" content="https://lourdespontiroli.com/invitacion-digital-cym" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="es_AR" />
                 <meta property="og:site_name" content="Cele y Mateo - Boda" />

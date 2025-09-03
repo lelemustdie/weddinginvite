@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CELE Y MATEO",
     description: "¡NOS CASAMOS!",
-    url: "https://lourdespontiroli.com/invitaciones-digitales/CYM",
+    url: "https://lourdespontiroli.com/invitacion-digital-cym/CYM",
     siteName: "Cele y Mateo - Boda",
     images: [
       {
