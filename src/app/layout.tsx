@@ -23,8 +23,8 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "CELE Y MATEO - ¡NOS CASAMOS!",
-  description: "Te invitamos a acompañarnos en nuestro día especial. 20 de diciembre de 2025 - El Dorado Eventos",
+  title: "CELE Y MATEO",
+  description: "¡NOS CASAMOS!",
   icons: {
     icon: [
       { url: "/favicon.ico" },
