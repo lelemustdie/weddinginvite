@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://lourdespontiroli.com"),
   openGraph: {
-    title: "CELE Y MATEO - ¡NOS CASAMOS!",
-    description: "Te invitamos a acompañarnos en nuestro día especial. 20 de diciembre de 2025 - El Dorado Eventos",
+    title: "CELE Y MATEO",
+    description: "¡NOS CASAMOS!",
     url: "https://lourdespontiroli.com/invitaciones-digitales/CYM",
     siteName: "Cele y Mateo - Boda",
     images: [
