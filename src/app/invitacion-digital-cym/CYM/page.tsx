@@ -19,19 +19,17 @@ import Modal from "@/components/Modal";
 import { useState } from "react";
 import Image from "next/image";
 import CountdownSection from "@/components/CountdownSection";
-import Head from "next/head";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const demoImages: CarouselImage[] = [
-    { src: "/Si.webp", alt: "novios" },
+    { src: "/playa.webp", alt: "novios" },
     { src: "/alas.webp", alt: "novios" },
-    { src: "/Foto-Final.webp", alt: "novios" },
+    { src: "/atardecer.webp", alt: "novios" },
     { src: "/car3.webp", alt: "novios" },
     { src: "/final.webp", alt: "novios" },
-    { src: "/btn.webp", alt: "novios" },
-    { src: "/playa.webp", alt: "novios" },
+    { src: "/Si.webp", alt: "novios" }
   ];
 
   const itineraryItems = [
@@ -164,7 +162,7 @@ export default function Home() {
               className="absolute inset-0 flex flex-col items-center justify-start md:pt-[10rem] pt-[4rem] text-center text-white bg-black/30">
             <h2 className="hero-title !text-5xl">Cele y Mateo</h2>
             <p className="mt-2 text-sm md:text-base tracking-wide">
-              JUNTOS COMENZAMOS <br/> ESTE VIAJE LLAMADO PARA SIEMPRE.
+              JUNTOS COMENZAMOS <br/> ESTE VIAJE LLAMADO PARA SIEMPRE
             </p>
           </div>
         </div>
