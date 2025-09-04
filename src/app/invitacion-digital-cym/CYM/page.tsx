@@ -135,8 +135,8 @@ export default function Home() {
         <section style={{maxWidth: 1100, margin: "20px auto"}}>
           <PhotoCarousel
               images={demoImages}
-              autoPlay={false}
-              interval={15000}
+              autoPlay={true}
+              interval={5200}
               showIndicators
               showArrows
               loop
