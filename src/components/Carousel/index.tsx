@@ -35,7 +35,7 @@ const clampIndex = (i: number, len: number) =>
 
 const PhotoCarousel = ({
                          images,
-                         autoPlay = true,
+                         autoPlay = false,
                          interval = 16000,
                          showIndicators = true,
                          showArrows = true,
