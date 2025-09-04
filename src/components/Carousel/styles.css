@@ -87,3 +87,10 @@
     cursor: pointer;
 }
 .indicator-dot.active { background: rgba(0,0,0,0.7); }
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: var(--tx, transform 400ms ease); /* ← antes: transition: transform 400ms ease; */
+    will-change: transform;
+}
