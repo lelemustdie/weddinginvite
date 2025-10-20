@@ -153,7 +153,7 @@ export default function Home() {
         <RsvpForm
             title="CONFIRMÁ TU ASISTENCIA"
             subtitle="Antes del 20 de noviembre"
-            googleScriptUrl="https://script.google.com/macros/s/AKfycbyes3bQhihd8kU-vvc2HLBUQ6qNT8pdbOxhrM7ASVUWciPu4hqSBpBTWWeIyaMB3eI/exec"
+            googleScriptUrl="https://script.google.com/macros/s/AKfycbwLLTym9uIPDe8YxPavLQorac8C6c4hiXY36hQpjCcObSXYu-2FUv2fvKrq1MNczPw-/exec"
         />
         <div className="relative w-full h-[450px] md:h-[650px] lg:h-[850px]">
           <Image src={endPhoto} alt="novios" fill className="object-cover"/>
