@@ -1,6 +1,6 @@
 .photo-carousel {
     position: relative;
-    width: 100%;
+    width: 20%;
     /* default 16:9 pero overrideable con --ratio */
     aspect-ratio: var(--ratio, 16 / 9);
     background: #f5f5f5;
